@@ -19,7 +19,7 @@ class Weekly:
 
     def __init__(self):
         # date set variables
-        today = date(2021,1,2)
+        today = date(2021,6,5) # CHANGE THIS FOR TESTING DIFFERENT CASES, NOTHING ELSE >:-(
         self.finish = int(today.day)
         self.Year = str(today.year)
         self.Month = str(today.month)
@@ -144,7 +144,8 @@ class Weekly:
                 cmd04 = "mv temp.csv %s" % F02  # renames the temp file to the name of the file previopusly removed wit hthe higher value (F6),
                 os.system(cmd04)  # doing this allows the for loop to function as if it is simpily appending one file continuiously
             start = int(Year + Month + str(self.start))  # creates an intergerr variable start of the form [YYYYMMDD] leading 0's are omitted for months and days 1 thru 9
-            cmd14 = "mv D%s%s%d.csv Weekof%d%d%d.csv" % (Year, Month, self.finish, self.start)    # cmd14 renames the final concateted file it with the naming convention Weekof[YEARMMDD]
+            cmd14 = "mv D%s%s%d.csv Weekof%s%s%d.csv" % (Year, Month, self.finish,
+                                                         Year, Month, self.start)    # cmd14 renames the final concateted file it with the naming convention Weekof[YEARMMDD]
             os.system(cmd14)  # date is the sunday at the beginning of that week
 
 
